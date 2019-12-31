@@ -1,0 +1,14 @@
+Program
+  MainClass Main (line 4)
+    Print (line 19)
+      new Bool().doStuff()
+  Class Bool extends Stuff (line 41)
+    VarDecl boolean x (line 42)
+    VarDecl boolean y (line 45)
+    VarDecl boolean z (line 49)
+    MethodDecl doStuff (line 52)
+      returns int
+      x = false
+      y = true
+      z = ((x && y) && !z)
+      Return 678 (line 83)

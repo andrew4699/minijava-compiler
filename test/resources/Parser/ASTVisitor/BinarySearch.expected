@@ -1,0 +1,163 @@
+Program
+  MainClass BinarySearch (line 1)
+    Print (line 3)
+      new BS().Start(20)
+  Class BS (line 10)
+    VarDecl int[] number (line 11)
+    VarDecl int size (line 12)
+    MethodDecl Start (line 16)
+      returns int
+      parameters:
+        int sz
+      VarDecl int aux01 (line 17)
+      VarDecl int aux02 (line 18)
+      aux01 = this.Init(sz)
+      aux02 = this.Print()
+      If this.Search(8) (line 21)
+        Print (line 21)
+          1 (line 21)
+      Else
+        Print (line 22)
+          0
+      If this.Search(19) (line 23)
+        Print (line 23)
+          1 (line 23)
+      Else
+        Print (line 24)
+          0
+      If this.Search(20) (line 25)
+        Print (line 25)
+          1 (line 25)
+      Else
+        Print (line 26)
+          0
+      If this.Search(21) (line 27)
+        Print (line 27)
+          1 (line 27)
+      Else
+        Print (line 28)
+          0
+      If this.Search(37) (line 29)
+        Print (line 29)
+          1 (line 29)
+      Else
+        Print (line 30)
+          0
+      If this.Search(38) (line 31)
+        Print (line 31)
+          1 (line 31)
+      Else
+        Print (line 32)
+          0
+      If this.Search(39) (line 33)
+        Print (line 33)
+          1 (line 33)
+      Else
+        Print (line 34)
+          0
+      If this.Search(50) (line 35)
+        Print (line 35)
+          1 (line 35)
+      Else
+        Print (line 36)
+          0
+      Return 999 (line 38)
+    MethodDecl Search (line 44)
+      returns boolean
+      parameters:
+        int num
+      VarDecl boolean bs01 (line 45)
+      VarDecl int right (line 46)
+      VarDecl int left (line 47)
+      VarDecl boolean var_cont (line 48)
+      VarDecl int medium (line 49)
+      VarDecl int aux01 (line 50)
+      VarDecl int nt (line 51)
+      aux01 = 0
+      bs01 = false
+      right = number.length
+      right = (right - 1)
+      left = 0
+      var_cont = true
+      While var_cont (line 59)
+        medium = (left + right)
+        medium = this.Div(medium)
+        aux01 = number[medium]
+        If (num < aux01) (line 63)
+          right = (medium - 1) (line 63)
+        Else
+          left = (medium + 1)
+        If this.Compare(aux01, num) (line 65)
+          var_cont = false (line 65)
+        Else
+          var_cont = true
+        If (right < left) (line 67)
+          var_cont = false (line 67)
+        Else
+          nt = 0
+      If this.Compare(aux01, num) (line 71)
+        bs01 = true (line 71)
+      Else
+        bs01 = false
+      Return bs01 (line 73)
+    MethodDecl Div (line 78)
+      returns int
+      parameters:
+        int num
+      VarDecl int count01 (line 79)
+      VarDecl int count02 (line 80)
+      VarDecl int aux03 (line 81)
+      count01 = 0
+      count02 = 0
+      aux03 = (num - 1)
+      While (count02 < aux03) (line 86)
+        count01 = (count01 + 1)
+        count02 = (count02 + 2)
+      Return count01 (line 90)
+    MethodDecl Compare (line 97)
+      returns boolean
+      parameters:
+        int num1
+        int num2
+      VarDecl boolean retval (line 98)
+      VarDecl int aux02 (line 99)
+      retval = false
+      aux02 = (num2 + 1)
+      If (num1 < num2) (line 103)
+        retval = false (line 103)
+      Else
+        If !(num1 < aux02) (line 104)
+          retval = false (line 104)
+        Else
+          retval = true
+      Return retval (line 106)
+    MethodDecl Print (line 110)
+      returns int
+      VarDecl int j (line 111)
+      j = 1
+      While (j < size) (line 114)
+        Print (line 115)
+          number[j]
+        j = (j + 1)
+      Print (line 118)
+        99999
+      Return 0 (line 119)
+    MethodDecl Init (line 124)
+      returns int
+      parameters:
+        int sz
+      VarDecl int j (line 125)
+      VarDecl int k (line 126)
+      VarDecl int aux02 (line 127)
+      VarDecl int aux01 (line 128)
+      size = sz
+      number = new int[sz]
+      j = 1
+      k = (size + 1)
+      While (j < size) (line 135)
+        aux01 = (2 * j)
+        aux02 = (k - 3)
+        number[j] = (aux01 + aux02)
+        j = (j + 1)
+        k = (k - 1)
+      Return 0 (line 142)

@@ -1,0 +1,18 @@
+Global Symbol Table:
+
+Class: a
+  Superclass: None
+
+  Fields:
+
+  Methods:
+    void main(String[] args)
+
+Class: b
+  Superclass: None
+
+  Fields:
+    int valid
+
+  Methods:
+    int valid()

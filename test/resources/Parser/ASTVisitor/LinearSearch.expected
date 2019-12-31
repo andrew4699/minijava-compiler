@@ -1,0 +1,81 @@
+Program
+  MainClass LinearSearch (line 1)
+    Print (line 3)
+      new LS().Start(10)
+  Class LS (line 11)
+    VarDecl int[] number (line 12)
+    VarDecl int size (line 13)
+    MethodDecl Start (line 17)
+      returns int
+      parameters:
+        int sz
+      VarDecl int aux01 (line 18)
+      VarDecl int aux02 (line 19)
+      aux01 = this.Init(sz)
+      aux02 = this.Print()
+      Print (line 23)
+        9999
+      Print (line 24)
+        this.Search(8)
+      Print (line 25)
+        this.Search(12)
+      Print (line 26)
+        this.Search(17)
+      Print (line 27)
+        this.Search(50)
+      Return 55 (line 28)
+    MethodDecl Print (line 32)
+      returns int
+      VarDecl int j (line 33)
+      j = 1
+      While (j < size) (line 36)
+        Print (line 37)
+          number[j]
+        j = (j + 1)
+      Return 0 (line 40)
+    MethodDecl Search (line 45)
+      returns int
+      parameters:
+        int num
+      VarDecl int j (line 46)
+      VarDecl boolean ls01 (line 47)
+      VarDecl int ifound (line 48)
+      VarDecl int aux01 (line 49)
+      VarDecl int aux02 (line 50)
+      VarDecl int nt (line 51)
+      j = 1
+      ls01 = false
+      ifound = 0
+      While (j < size) (line 58)
+        aux01 = number[j]
+        aux02 = (num + 1)
+        If (aux01 < num) (line 61)
+          nt = 0 (line 61)
+        Else
+          If !(aux01 < aux02) (line 62)
+            nt = 0 (line 62)
+          Else
+            ls01 = true
+            ifound = 1
+            j = size
+        j = (j + 1)
+      Return ifound (line 71)
+    MethodDecl Init (line 78)
+      returns int
+      parameters:
+        int sz
+      VarDecl int j (line 79)
+      VarDecl int k (line 80)
+      VarDecl int aux01 (line 81)
+      VarDecl int aux02 (line 82)
+      size = sz
+      number = new int[sz]
+      j = 1
+      k = (size + 1)
+      While (j < size) (line 89)
+        aux01 = (2 * j)
+        aux02 = (k - 3)
+        number[j] = (aux01 + aux02)
+        j = (j + 1)
+        k = (k - 1)
+      Return 0 (line 96)

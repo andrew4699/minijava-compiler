@@ -1,0 +1,97 @@
+Program
+  MainClass QuickSort (line 1)
+    Print (line 3)
+      new QS().Start(10)
+  Class QS (line 11)
+    VarDecl int[] number (line 13)
+    VarDecl int size (line 14)
+    MethodDecl Start (line 18)
+      returns int
+      parameters:
+        int sz
+      VarDecl int aux01 (line 19)
+      aux01 = this.Init(sz)
+      aux01 = this.Print()
+      Print (line 22)
+        9999
+      aux01 = (size - 1)
+      aux01 = this.Sort(0, aux01)
+      aux01 = this.Print()
+      Return 0 (line 26)
+    MethodDecl Sort (line 31)
+      returns int
+      parameters:
+        int left
+        int right
+      VarDecl int v (line 32)
+      VarDecl int i (line 33)
+      VarDecl int j (line 34)
+      VarDecl int nt (line 35)
+      VarDecl int t (line 36)
+      VarDecl boolean cont01 (line 37)
+      VarDecl boolean cont02 (line 38)
+      VarDecl int aux03 (line 39)
+      t = 0
+      If (left < right) (line 41)
+        v = number[right]
+        i = (left - 1)
+        j = right
+        cont01 = true
+        While cont01 (line 46)
+          cont02 = true
+          While cont02 (line 48)
+            i = (i + 1)
+            aux03 = number[i]
+            If !(aux03 < v) (line 51)
+              cont02 = false (line 51)
+            Else
+              cont02 = true
+          cont02 = true
+          While cont02 (line 55)
+            j = (j - 1)
+            aux03 = number[j]
+            If !(v < aux03) (line 58)
+              cont02 = false (line 58)
+            Else
+              cont02 = true
+          t = number[i]
+          number[i] = number[j]
+          number[j] = t
+          If (j < (i + 1)) (line 67)
+            cont01 = false (line 67)
+          Else
+            cont01 = true
+        number[j] = number[i]
+        number[i] = number[right]
+        number[right] = t
+        nt = this.Sort(left, (i - 1))
+        nt = this.Sort((i + 1), right) (line 42)
+      Else
+        nt = 0
+      Return 0 (line 77)
+    MethodDecl Print (line 82)
+      returns int
+      VarDecl int j (line 83)
+      j = 0
+      While (j < size) (line 85)
+        Print (line 86)
+          number[j]
+        j = (j + 1)
+      Return 0 (line 89)
+    MethodDecl Init (line 94)
+      returns int
+      parameters:
+        int sz
+      size = sz
+      number = new int[sz]
+      number[0] = 20
+      number[1] = 7
+      number[2] = 12
+      number[3] = 18
+      number[4] = 2
+      number[5] = 11
+      number[6] = 6
+      number[7] = 9
+      number[8] = 19
+      number[9] = 5
+      Return 0 (line 109)

@@ -1,0 +1,14 @@
+Program
+  MainClass Foo (line 1)
+    Print (line 3)
+      ((5 + (4 * 3)) - 1)
+  Class Bar extends Nothing (line 7)
+    MethodDecl bar (line 8)
+      returns int
+      parameters:
+        Baz f
+        Bar b
+      a[i] = (bar.x() + foo.y())
+      a[i] = ((b[i] + c[i]) + foo[i].y())
+      a[i] = ((bar.x() + q.length) - foo.y())
+      Return 5 (line 12)

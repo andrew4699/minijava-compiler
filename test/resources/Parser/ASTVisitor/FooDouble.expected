@@ -1,0 +1,15 @@
+Program
+  MainClass Foo (line 1)
+    Print (line 11)
+      ((5.0E25 + ((5.0E-33 * 4.0E99) * 3)) - 1.0)
+  Class Bar extends Nothing (line 15)
+    MethodDecl bar (line 15)
+      returns double
+      parameters:
+        Baz f
+        double b
+      VarDecl double y (line 16)
+      y = 1.0
+      Print (line 18)
+        new Thing().method()
+      Return 5.3E66 (line 19)

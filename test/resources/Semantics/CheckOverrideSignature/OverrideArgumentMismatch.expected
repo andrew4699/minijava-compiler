@@ -1,0 +1,3 @@
+[GlobalSymbolTable]: C.ComputeFac incorrectly overrides B.ComputeFac (argument types)
+[GlobalSymbolTable]: C.ComputeFac incorrectly overrides A.ComputeFac (argument types)
+[GlobalSymbolTable]: D.ComputeFac incorrectly overrides A.ComputeFac (argument types)

@@ -1,0 +1,21 @@
+[GlobalSymbolTableVisitor - 21]: Class A already declared
+[GlobalSymbolTableVisitor - 27]: Class A already declared
+Global Symbol Table:
+
+Class: Factorial
+  Superclass: None
+
+  Fields:
+
+  Methods:
+    void main(String[] a)
+
+Class: A
+  Superclass: None
+
+  Fields:
+    int a
+    boolean b
+
+  Methods:
+    int ComputeFac(int num)

@@ -1,0 +1,15 @@
+Program
+  MainClass MyClass (line 1)
+    y = 5
+  Class NonMain (line 7)
+    MethodDecl doStuff (line 8)
+      returns int
+      VarDecl int x (line 9)
+      x = 4
+      If (x < 5) (line 12)
+        x = (x + 1) (line 13)
+      Else
+        x = (x * 2)
+      While (x < 4) (line 18)
+        x = (x + x)
+      Return (x + 5) (line 22)

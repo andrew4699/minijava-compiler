@@ -1,0 +1,27 @@
+Program
+  MainClass M (line 1)
+    Print (line 5)
+      2
+  Class A (line 9)
+    VarDecl int x (line 11)
+    VarDecl boolean b (line 12)
+    MethodDecl a (line 14)
+      returns int
+      Return 1 (line 16)
+    MethodDecl b (line 19)
+      returns int
+      parameters:
+        int p
+      Return p (line 21)
+    MethodDecl c (line 24)
+      returns boolean
+      Return b (line 26)
+    MethodDecl d (line 29)
+      returns boolean
+      Return (x < 100) (line 31)
+    MethodDecl e (line 34)
+      returns int
+      VarDecl int[] arr (line 36)
+      arr = new int[30]
+      arr[20] = 2
+      Return arr[20] (line 39)

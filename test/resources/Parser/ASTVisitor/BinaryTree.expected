@@ -1,0 +1,289 @@
+Program
+  MainClass BinaryTree (line 1)
+    Print (line 3)
+      new BT().Start()
+  Class BT (line 10)
+    MethodDecl Start (line 12)
+      returns int
+      VarDecl Tree root (line 13)
+      VarDecl boolean ntb (line 14)
+      VarDecl int nti (line 15)
+      root = new Tree()
+      ntb = root.Init(16)
+      ntb = root.Print()
+      Print (line 20)
+        100000000
+      ntb = root.Insert(8)
+      ntb = root.Print()
+      ntb = root.Insert(24)
+      ntb = root.Insert(4)
+      ntb = root.Insert(12)
+      ntb = root.Insert(20)
+      ntb = root.Insert(28)
+      ntb = root.Insert(14)
+      ntb = root.Print()
+      Print (line 30)
+        root.Search(24)
+      Print (line 31)
+        root.Search(12)
+      Print (line 32)
+        root.Search(16)
+      Print (line 33)
+        root.Search(50)
+      Print (line 34)
+        root.Search(12)
+      ntb = root.Delete(12)
+      ntb = root.Print()
+      Print (line 37)
+        root.Search(12)
+      Return 0 (line 39)
+  Class Tree (line 44)
+    VarDecl Tree left (line 45)
+    VarDecl Tree right (line 46)
+    VarDecl int key (line 47)
+    VarDecl boolean has_left (line 48)
+    VarDecl boolean has_right (line 49)
+    VarDecl Tree my_null (line 50)
+    MethodDecl Init (line 53)
+      returns boolean
+      parameters:
+        int v_key
+      key = v_key
+      has_left = false
+      has_right = false
+      Return true (line 57)
+    MethodDecl SetRight (line 61)
+      returns boolean
+      parameters:
+        Tree rn
+      right = rn
+      Return true (line 63)
+    MethodDecl SetLeft (line 67)
+      returns boolean
+      parameters:
+        Tree ln
+      left = ln
+      Return true (line 69)
+    MethodDecl GetRight (line 72)
+      returns Tree
+      Return right (line 73)
+    MethodDecl GetLeft (line 76)
+      returns Tree
+      Return left (line 77)
+    MethodDecl GetKey (line 80)
+      returns int
+      Return key (line 81)
+    MethodDecl SetKey (line 84)
+      returns boolean
+      parameters:
+        int v_key
+      key = v_key
+      Return true (line 86)
+    MethodDecl GetHas_Right (line 89)
+      returns boolean
+      Return has_right (line 90)
+    MethodDecl GetHas_Left (line 93)
+      returns boolean
+      Return has_left (line 94)
+    MethodDecl SetHas_Left (line 97)
+      returns boolean
+      parameters:
+        boolean val
+      has_left = val
+      Return true (line 99)
+    MethodDecl SetHas_Right (line 102)
+      returns boolean
+      parameters:
+        boolean val
+      has_right = val
+      Return true (line 104)
+    MethodDecl Compare (line 110)
+      returns boolean
+      parameters:
+        int num1
+        int num2
+      VarDecl boolean ntb (line 111)
+      VarDecl int nti (line 112)
+      ntb = false
+      nti = (num2 + 1)
+      If (num1 < num2) (line 116)
+        ntb = false (line 116)
+      Else
+        If !(num1 < nti) (line 117)
+          ntb = false (line 117)
+        Else
+          ntb = true
+      Return ntb (line 119)
+    MethodDecl Insert (line 124)
+      returns boolean
+      parameters:
+        int v_key
+      VarDecl Tree new_node (line 125)
+      VarDecl boolean ntb (line 126)
+      VarDecl boolean cont (line 127)
+      VarDecl int key_aux (line 128)
+      VarDecl Tree current_node (line 129)
+      new_node = new Tree()
+      ntb = new_node.Init(v_key)
+      current_node = this
+      cont = true
+      While cont (line 135)
+        key_aux = current_node.GetKey()
+        If (v_key < key_aux) (line 137)
+          If current_node.GetHas_Left() (line 138)
+            current_node = current_node.GetLeft() (line 139)
+          Else
+            cont = false
+            ntb = current_node.SetHas_Left(true)
+            ntb = current_node.SetLeft(new_node) (line 138)
+        Else
+          If current_node.GetHas_Right() (line 147)
+            current_node = current_node.GetRight() (line 148)
+          Else
+            cont = false
+            ntb = current_node.SetHas_Right(true)
+            ntb = current_node.SetRight(new_node)
+      Return true (line 156)
+    MethodDecl Delete (line 161)
+      returns boolean
+      parameters:
+        int v_key
+      VarDecl Tree current_node (line 162)
+      VarDecl Tree parent_node (line 163)
+      VarDecl boolean cont (line 164)
+      VarDecl boolean found (line 165)
+      VarDecl boolean is_root (line 166)
+      VarDecl int key_aux (line 167)
+      VarDecl boolean ntb (line 168)
+      current_node = this
+      parent_node = this
+      cont = true
+      found = false
+      is_root = true
+      While cont (line 175)
+        key_aux = current_node.GetKey()
+        If (v_key < key_aux) (line 177)
+          If current_node.GetHas_Left() (line 178)
+            parent_node = current_node
+            current_node = current_node.GetLeft() (line 179)
+          Else
+            cont = false (line 178)
+        Else
+          If (key_aux < v_key) (line 184)
+            If current_node.GetHas_Right() (line 185)
+              parent_node = current_node
+              current_node = current_node.GetRight() (line 186)
+            Else
+              cont = false (line 185)
+          Else
+            If is_root (line 191)
+              If (!current_node.GetHas_Right() && !current_node.GetHas_Left()) (line 192)
+                ntb = true (line 194)
+              Else
+                ntb = this.Remove(parent_node, current_node) (line 192)
+            Else
+              ntb = this.Remove(parent_node, current_node)
+            found = true
+            cont = false
+        is_root = false
+      Return found (line 203)
+    MethodDecl Remove (line 209)
+      returns boolean
+      parameters:
+        Tree p_node
+        Tree c_node
+      VarDecl boolean ntb (line 210)
+      VarDecl int auxkey1 (line 211)
+      VarDecl int auxkey2 (line 212)
+      If c_node.GetHas_Left() (line 214)
+        ntb = this.RemoveLeft(p_node, c_node) (line 215)
+      Else
+        If c_node.GetHas_Right() (line 217)
+          ntb = this.RemoveRight(p_node, c_node) (line 218)
+        Else
+          auxkey1 = c_node.GetKey()
+          auxkey2 = p_node.GetLeft().GetKey()
+          If this.Compare(auxkey1, auxkey2) (line 224)
+            ntb = p_node.SetLeft(my_null)
+            ntb = p_node.SetHas_Left(false) (line 225)
+          Else
+            ntb = p_node.SetRight(my_null)
+            ntb = p_node.SetHas_Right(false)
+      Return true (line 233)
+    MethodDecl RemoveRight (line 240)
+      returns boolean
+      parameters:
+        Tree p_node
+        Tree c_node
+      VarDecl boolean ntb (line 241)
+      While c_node.GetHas_Right() (line 243)
+        ntb = c_node.SetKey(c_node.GetRight().GetKey())
+        p_node = c_node
+        c_node = c_node.GetRight()
+      ntb = p_node.SetRight(my_null)
+      ntb = p_node.SetHas_Right(false)
+      Return true (line 253)
+    MethodDecl RemoveLeft (line 260)
+      returns boolean
+      parameters:
+        Tree p_node
+        Tree c_node
+      VarDecl boolean ntb (line 261)
+      While c_node.GetHas_Left() (line 263)
+        ntb = c_node.SetKey(c_node.GetLeft().GetKey())
+        p_node = c_node
+        c_node = c_node.GetLeft()
+      ntb = p_node.SetLeft(my_null)
+      ntb = p_node.SetHas_Left(false)
+      Return true (line 273)
+    MethodDecl Search (line 277)
+      returns int
+      parameters:
+        int v_key
+      VarDecl boolean cont (line 278)
+      VarDecl int ifound (line 279)
+      VarDecl Tree current_node (line 280)
+      VarDecl int key_aux (line 281)
+      current_node = this
+      cont = true
+      ifound = 0
+      While cont (line 286)
+        key_aux = current_node.GetKey()
+        If (v_key < key_aux) (line 288)
+          If current_node.GetHas_Left() (line 289)
+            current_node = current_node.GetLeft() (line 290)
+          Else
+            cont = false (line 289)
+        Else
+          If (key_aux < v_key) (line 293)
+            If current_node.GetHas_Right() (line 294)
+              current_node = current_node.GetRight() (line 295)
+            Else
+              cont = false (line 294)
+          Else
+            ifound = 1
+            cont = false
+      Return ifound (line 302)
+    MethodDecl Print (line 306)
+      returns boolean
+      VarDecl Tree current_node (line 307)
+      VarDecl boolean ntb (line 308)
+      current_node = this
+      ntb = this.RecPrint(current_node)
+      Return true (line 312)
+    MethodDecl RecPrint (line 316)
+      returns boolean
+      parameters:
+        Tree node
+      VarDecl boolean ntb (line 317)
+      If node.GetHas_Left() (line 319)
+        ntb = this.RecPrint(node.GetLeft()) (line 322)
+      Else
+        ntb = true
+      Print (line 324)
+        node.GetKey()
+      If node.GetHas_Right() (line 325)
+        ntb = this.RecPrint(node.GetRight()) (line 328)
+      Else
+        ntb = true
+      Return true (line 330)

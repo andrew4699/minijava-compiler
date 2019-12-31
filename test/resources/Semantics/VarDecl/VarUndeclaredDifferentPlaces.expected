@@ -1,0 +1,6 @@
+[VarDeclVisitor - 11]: x undeclared at Bar.buzz
+[VarDeclVisitor - 11]: x undeclared at Bar.buzz
+[VarDeclVisitor - 16]: x undeclared at Bar.bazz
+[VarDeclVisitor - 16]: x undeclared at Bar.bazz
+[VarDeclVisitor - 24]: x undeclared at Buzz.buzz
+[VarDeclVisitor - 24]: x undeclared at Buzz.buzz

@@ -1,0 +1,13 @@
+class Foo {
+  public static void main(String[] args) {
+    System.out.println(((5.0E25 + ((5.0E-33 * 4.0E99) * 3)) - 1.0));
+  }
+}
+class Bar extends Nothing {
+  public double bar(Baz f, double b) {
+    double y;
+    y = 1.0;
+    System.out.println(new Thing().method());
+    return 5.3E66;
+  }
+}

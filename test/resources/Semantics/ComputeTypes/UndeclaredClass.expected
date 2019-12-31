@@ -1,0 +1,11 @@
+[ComputeTypesVisitor - 10]: Cannot create object of unknown class C
+Program
+  MainClass Factorial{unknown} (line 1)
+    Print (line 3)
+      5{int}
+  Class A{class} (line 7)
+    MethodDecl x{unknown} (line 8)
+      returns int
+      VarDecl C c{unknown} (line 9)
+      c{unknown} = new C{unknown}(){unknown}
+      Return 5{int} (line 11)

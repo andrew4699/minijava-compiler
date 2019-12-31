@@ -1,0 +1,2 @@
+[ReturnTypeVisitor - 18]: B.g returned int but expects boolean
+[ReturnTypeVisitor - 26]: B.i returned B but expects D

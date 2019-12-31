@@ -1,0 +1,37 @@
+[GlobalSymbolTableVisitor - 20]: Method ComputeFac already declared
+[GlobalSymbolTableVisitor - 36]: Method ComputeFac already declared
+Global Symbol Table:
+
+Class: Factorial
+  Superclass: None
+
+  Fields:
+
+  Methods:
+    void main(String[] a)
+
+Class: A
+  Superclass: None
+
+  Fields:
+    int a
+    boolean b
+
+  Methods:
+    int ComputeFac(int num)
+
+Class: B
+  Superclass: A
+
+  Fields:
+
+  Methods:
+    int ComputeFac(int num2)
+
+Class: C
+  Superclass: B
+
+  Fields:
+
+  Methods:
+    int ComputeFac(int num3)

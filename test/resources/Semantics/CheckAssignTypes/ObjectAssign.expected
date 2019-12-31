@@ -1,0 +1,5 @@
+[CheckAssignTypesVisitor - 26]: Trying to assign C to A
+[CheckAssignTypesVisitor - 28]: Trying to assign A to B
+[CheckAssignTypesVisitor - 29]: Trying to assign C to B
+[CheckAssignTypesVisitor - 31]: Trying to assign A to C
+[CheckAssignTypesVisitor - 32]: Trying to assign B to C

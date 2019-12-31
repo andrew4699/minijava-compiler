@@ -1,0 +1,2 @@
+[CheckAssignTypesVisitor - 18]: Trying to assign boolean to int
+[CheckAssignTypesVisitor - 22]: Trying to assign int[] to boolean

@@ -1,0 +1,4 @@
+[ExprTypesVisitor - 24]: Expression yielded type boolean where int was expected.
+[ExprTypesVisitor - 25]: Expression yielded type int[] where int was expected.
+[ExprTypesVisitor - 26]: Expression yielded type boolean where int was expected.
+[ExprTypesVisitor - 28]: Expression yielded type int where int[] was expected.

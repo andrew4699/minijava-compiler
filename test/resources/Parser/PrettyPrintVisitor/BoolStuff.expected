@@ -1,0 +1,16 @@
+class Main {
+  public static void main(String[] args) {
+    System.out.println(new Bool().doStuff());
+  }
+}
+class Bool extends Stuff {
+  boolean x;
+  boolean y;
+  boolean z;
+  public int doStuff() {
+    x = false;
+    y = true;
+    z = ((x && y) && !z);
+    return 678;
+  }
+}

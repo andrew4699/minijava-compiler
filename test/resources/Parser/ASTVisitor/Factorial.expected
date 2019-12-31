@@ -1,0 +1,15 @@
+Program
+  MainClass Factorial (line 1)
+    Print (line 3)
+      new Fac().ComputeFac(10)
+  Class Fac (line 7)
+    MethodDecl ComputeFac (line 9)
+      returns int
+      parameters:
+        int num
+      VarDecl int num_aux (line 10)
+      If (num < 1) (line 11)
+        num_aux = 1 (line 12)
+      Else
+        num_aux = (num * this.ComputeFac((num - 1)))
+      Return num_aux (line 15)

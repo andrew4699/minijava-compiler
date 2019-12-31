@@ -1,0 +1,249 @@
+Program
+  MainClass LinkedList (line 1)
+    Print (line 3)
+      new LL().Start()
+  Class Element (line 7)
+    VarDecl int Age (line 8)
+    VarDecl int Salary (line 9)
+    VarDecl boolean Married (line 10)
+    MethodDecl Init (line 13)
+      returns boolean
+      parameters:
+        int v_Age
+        int v_Salary
+        boolean v_Married
+      Age = v_Age
+      Salary = v_Salary
+      Married = v_Married
+      Return true (line 17)
+    MethodDecl GetAge (line 20)
+      returns int
+      Return Age (line 21)
+    MethodDecl GetSalary (line 24)
+      returns int
+      Return Salary (line 25)
+    MethodDecl GetMarried (line 28)
+      returns boolean
+      Return Married (line 29)
+    MethodDecl Equal (line 34)
+      returns boolean
+      parameters:
+        Element other
+      VarDecl boolean ret_val (line 35)
+      VarDecl int aux01 (line 36)
+      VarDecl int aux02 (line 37)
+      VarDecl int nt (line 38)
+      ret_val = true
+      aux01 = other.GetAge()
+      If !this.Compare(aux01, Age) (line 42)
+        ret_val = false (line 42)
+      Else
+        aux02 = other.GetSalary()
+        If !this.Compare(aux02, Salary) (line 45)
+          ret_val = false (line 45)
+        Else
+          If Married (line 47)
+            If !other.GetMarried() (line 48)
+              ret_val = false (line 48)
+            Else
+              nt = 0 (line 48)
+          Else
+            If other.GetMarried() (line 51)
+              ret_val = false (line 51)
+            Else
+              nt = 0
+      Return ret_val (line 55)
+    MethodDecl Compare (line 61)
+      returns boolean
+      parameters:
+        int num1
+        int num2
+      VarDecl boolean retval (line 62)
+      VarDecl int aux02 (line 63)
+      retval = false
+      aux02 = (num2 + 1)
+      If (num1 < num2) (line 66)
+        retval = false (line 66)
+      Else
+        If !(num1 < aux02) (line 67)
+          retval = false (line 67)
+        Else
+          retval = true
+      Return retval (line 69)
+  Class List (line 74)
+    VarDecl Element elem (line 75)
+    VarDecl List next (line 76)
+    VarDecl boolean end (line 77)
+    MethodDecl Init (line 80)
+      returns boolean
+      end = true
+      Return true (line 82)
+    MethodDecl InitNew (line 86)
+      returns boolean
+      parameters:
+        Element v_elem
+        List v_next
+        boolean v_end
+      end = v_end
+      elem = v_elem
+      next = v_next
+      Return true (line 90)
+    MethodDecl Insert (line 94)
+      returns List
+      parameters:
+        Element new_elem
+      VarDecl boolean ret_val (line 95)
+      VarDecl List aux03 (line 96)
+      VarDecl List aux02 (line 97)
+      aux03 = this
+      aux02 = new List()
+      ret_val = aux02.InitNew(new_elem, aux03, false)
+      Return aux02 (line 101)
+    MethodDecl SetNext (line 106)
+      returns boolean
+      parameters:
+        List v_next
+      next = v_next
+      Return true (line 108)
+    MethodDecl Delete (line 112)
+      returns List
+      parameters:
+        Element e
+      VarDecl List my_head (line 113)
+      VarDecl boolean ret_val (line 114)
+      VarDecl boolean aux05 (line 115)
+      VarDecl List aux01 (line 116)
+      VarDecl List prev (line 117)
+      VarDecl boolean var_end (line 118)
+      VarDecl Element var_elem (line 119)
+      VarDecl int aux04 (line 120)
+      VarDecl int nt (line 121)
+      my_head = this
+      ret_val = false
+      aux04 = (0 - 1)
+      aux01 = this
+      prev = this
+      var_end = end
+      var_elem = elem
+      While (!var_end && !ret_val) (line 131)
+        If e.Equal(var_elem) (line 132)
+          ret_val = true
+          If (aux04 < 0) (line 134)
+            my_head = aux01.GetNext() (line 136)
+          Else
+            Print (line 139)
+              (0 - 555)
+            aux05 = prev.SetNext(aux01.GetNext())
+            Print (line 141)
+              (0 - 555) (line 133)
+        Else
+          nt = 0
+        If !ret_val (line 145)
+          prev = aux01
+          aux01 = aux01.GetNext()
+          var_end = aux01.GetEnd()
+          var_elem = aux01.GetElem()
+          aux04 = 1 (line 146)
+        Else
+          nt = 0
+      Return my_head (line 153)
+    MethodDecl Search (line 158)
+      returns int
+      parameters:
+        Element e
+      VarDecl int int_ret_val (line 159)
+      VarDecl List aux01 (line 160)
+      VarDecl Element var_elem (line 161)
+      VarDecl boolean var_end (line 162)
+      VarDecl int nt (line 163)
+      int_ret_val = 0
+      aux01 = this
+      var_end = end
+      var_elem = elem
+      While !var_end (line 169)
+        If e.Equal(var_elem) (line 170)
+          int_ret_val = 1 (line 171)
+        Else
+          nt = 0
+        aux01 = aux01.GetNext()
+        var_end = aux01.GetEnd()
+        var_elem = aux01.GetElem()
+      Return int_ret_val (line 178)
+    MethodDecl GetEnd (line 181)
+      returns boolean
+      Return end (line 182)
+    MethodDecl GetElem (line 185)
+      returns Element
+      Return elem (line 186)
+    MethodDecl GetNext (line 189)
+      returns List
+      Return next (line 190)
+    MethodDecl Print (line 195)
+      returns boolean
+      VarDecl List aux01 (line 196)
+      VarDecl boolean var_end (line 197)
+      VarDecl Element var_elem (line 198)
+      aux01 = this
+      var_end = end
+      var_elem = elem
+      While !var_end (line 203)
+        Print (line 204)
+          var_elem.GetAge()
+        aux01 = aux01.GetNext()
+        var_end = aux01.GetEnd()
+        var_elem = aux01.GetElem()
+      Return true (line 210)
+  Class LL (line 217)
+    MethodDecl Start (line 219)
+      returns int
+      VarDecl List head (line 221)
+      VarDecl List last_elem (line 222)
+      VarDecl boolean aux01 (line 223)
+      VarDecl Element el01 (line 224)
+      VarDecl Element el02 (line 225)
+      VarDecl Element el03 (line 226)
+      last_elem = new List()
+      aux01 = last_elem.Init()
+      head = last_elem
+      aux01 = head.Init()
+      aux01 = head.Print()
+      el01 = new Element()
+      aux01 = el01.Init(25, 37000, false)
+      head = head.Insert(el01)
+      aux01 = head.Print()
+      Print (line 239)
+        10000000
+      el01 = new Element()
+      aux01 = el01.Init(39, 42000, true)
+      el02 = el01
+      head = head.Insert(el01)
+      aux01 = head.Print()
+      Print (line 246)
+        10000000
+      el01 = new Element()
+      aux01 = el01.Init(22, 34000, false)
+      head = head.Insert(el01)
+      aux01 = head.Print()
+      el03 = new Element()
+      aux01 = el03.Init(27, 34000, false)
+      Print (line 254)
+        head.Search(el02)
+      Print (line 255)
+        head.Search(el03)
+      Print (line 256)
+        10000000
+      el01 = new Element()
+      aux01 = el01.Init(28, 35000, false)
+      head = head.Insert(el01)
+      aux01 = head.Print()
+      Print (line 262)
+        2220000
+      head = head.Delete(el02)
+      aux01 = head.Print()
+      Print (line 266)
+        33300000
+      head = head.Delete(el01)
+      aux01 = head.Print()
+      Print (line 271)
+        44440000
+      Return 0 (line 273)

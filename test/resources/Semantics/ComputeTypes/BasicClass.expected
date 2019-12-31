@@ -1,0 +1,20 @@
+Program
+  MainClass Factorial{unknown} (line 1)
+    Print (line 3)
+      new A{class}(){A}.ComputeFac{unknown}(10{int}, 2.0{double}){int}
+  Class A{class} (line 7)
+    VarDecl int a{int} (line 8)
+    VarDecl boolean b{boolean} (line 9)
+    VarDecl double d{double} (line 10)
+    MethodDecl ComputeFac{unknown} (line 12)
+      returns int
+      parameters:
+        int num{unknown}
+        double dub{unknown}
+      VarDecl int num_aux{int} (line 13)
+      VarDecl double double_aux{double} (line 14)
+      If (num{int} < 1{int}){boolean} (line 15)
+        num_aux{int} = 1{int} (line 16)
+      Else
+        num_aux{int} = (num{int} * this{A}.ComputeFac{unknown}((num{int} - 1{int}){int}, 2.0E55{double}){int}){int}
+      Return num_aux{int} (line 19)

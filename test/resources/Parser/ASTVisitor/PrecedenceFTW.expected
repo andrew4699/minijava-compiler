@@ -1,0 +1,8 @@
+Program
+  MainClass P (line 1)
+    Print (line 3)
+      1
+  Class FTW (line 6)
+    MethodDecl p_ftw (line 7)
+      returns int
+      Return (((((1 + (2 * 3)) + 4) + (4 * 5)) < (1 + (2 * 5))) && !true) (line 8)
